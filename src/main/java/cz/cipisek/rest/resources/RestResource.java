@@ -14,7 +14,7 @@ public class RestResource {
 
 
     @Inject
-
+    private RestManager restManager;
 
     @GET
     public Object getZviratko() {
@@ -24,20 +24,20 @@ public class RestResource {
 
     @DELETE
     public void deleteZviratko() {
-        RestManager.deleteZviratko();
+        restManager.deleteZviratko();
     }
 
     @GET
     public void getInZviratko(@PathParam("number") Integer cislo) {
-        RestManager.getInZviratko();
+        restManager.getInZviratko();
     }
 
     @POST
     public void noveZviratko(@FormParam("nazev") String nazev, @FormParam("vek") String vek) {
-        RestManager.noveZviratko();
+        restManager.noveZviratko();
     }
     @PUT
     public void zmenitZviratko(@PathParam("number") Integer number,@FormParam("nazev") String nazev ,@FormParam("vek") String vek){
-        RestManager.zmenitZviratko();
+        restManager.zmenitZviratko();
     }
 }
