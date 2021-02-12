@@ -18,7 +18,7 @@ public class RestManager implements Serializable {
     static String nazev;
 
 
-    public static void getInZviratko() {
+    public void getInZviratko() {
         if (number != null && zviratko.get(number) != null) {
             Response.ok(zviratko.get(number)).build();
         } else {
@@ -26,13 +26,13 @@ public class RestManager implements Serializable {
         }
     }
 
-    public static void deleteZviratko() {
+    public void deleteZviratko() {
         if (number != null) {
             zviratko.remove(number);
         }
     }
 
-    public static void noveZviratko() {
+    public void noveZviratko() {
 
         if (nazev != null && vek != null) {
             HashMap<String, String> noveZviratko = new HashMap<>();
@@ -46,7 +46,7 @@ public class RestManager implements Serializable {
         }
     }
 
-    public static void zmenitZviratko(){
+    public void zmenitZviratko(){
         if(zviratko.get(number) != null && number != null && nazev != null && vek != null){
             HashMap<String,String> noveZviratko = new HashMap<>();
             noveZviratko.put("nazev", nazev);
